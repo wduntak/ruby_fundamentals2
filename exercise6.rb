@@ -12,6 +12,8 @@ until isValid
 
 	if item_to_add == "quit"
 
+		puts " "
+
 		puts "Closing..."
 
 		isValid = true
@@ -26,10 +28,17 @@ until isValid
 	end
 end
 
+#Count how many items
+
+num_items = grocery_list.length
+
+puts ""
+
+puts "You need to pick up #{num_items}"
+
 #Add * to all of the items in array
 
 grocery_list.map! {|x| "*" + x}
-
 
 #Output list
 
