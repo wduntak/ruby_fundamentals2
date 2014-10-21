@@ -34,7 +34,39 @@ num_items = grocery_list.length
 
 puts ""
 
-puts "You need to pick up #{num_items}"
+puts "You need to pick up #{num_items} items."
+
+#Check list if item included
+
+checkValid = false
+
+until checkValid
+
+puts "Have you forgotten any items? (Y/N)"
+answer = gets.chomp.upcase
+
+	if answer == "Y"
+
+		puts "What do you want to add?"
+
+		checkValid = false
+
+	elsif answer == "N"
+
+		puts ""
+
+		puts "Closing ..."
+
+		puts ""
+
+		checkValid = false
+	else 
+
+		puts "That is not a valid answer."
+
+	end
+end
+
 
 #Add * to all of the items in array
 
