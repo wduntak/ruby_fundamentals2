@@ -104,6 +104,11 @@ checkValid = true
 	
 end
 
+#Display the second item on the list or array
+
+second_item = grocery_list[1]
+
+puts "The second item on the list is #{second_item}."
 
 #Add * to all of the items in array
 
