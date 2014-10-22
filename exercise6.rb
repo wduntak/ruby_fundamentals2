@@ -114,6 +114,35 @@ puts "The second item on the list is #{second_item}."
 
 grocery_list.sort!
 
+#Remove item from list
+
+verify = false
+
+until verify
+
+	puts "What would you like to remove from the grocery list? (Type 'quit' to quit.)"
+
+	item_to_remove = gets.chomp.downcase
+
+	if item_to_remove == "quit"
+
+		puts " "
+
+		puts "Closing..."
+
+		verify = true
+
+	else
+		
+		grocery_list.delete("#{item_to_remove}")
+
+		puts "#{item_to_remove} has been removed."
+
+		verify = false
+
+	end
+end
+
 #Add * to all of the items in array
 
 grocery_list.map! {|x| "*" + x}
