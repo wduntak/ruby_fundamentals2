@@ -110,6 +110,10 @@ second_item = grocery_list[1]
 
 puts "The second item on the list is #{second_item}."
 
+#Sort the list alphabetically
+
+grocery_list.sort!
+
 #Add * to all of the items in array
 
 grocery_list.map! {|x| "*" + x}
