@@ -36,35 +36,72 @@ puts ""
 
 puts "You need to pick up #{num_items} items."
 
+puts ""
+
 #Check list if item included
 
 checkValid = false
 
-until checkValid
+unless checkValid
 
-puts "Have you forgotten any items? (Y/N)"
-answer = gets.chomp.upcase
+	puts "Have you forgotten any items? (Y/N)"
+	answer = gets.chomp.upcase
+
+	puts ""
 
 	if answer == "Y"
 
-		puts "What do you want to add?"
+		isTrue = false
 
-		checkValid = false
+		until isTrue
+
+			puts "What do you want to add? (Type 'done' when finished)"
+			add = gets.chomp.downcase
+
+			puts ""
+
+			if add == "done"
+			
+				isTrue = false
+			
+			else
+				
+				if grocery_list.include?("#{add}")
+
+					puts "You have this item on your list."
+
+				else
+
+					grocery_list << "#{add}"
+					puts "#{add} has been added."
+
+				end
+
+				isTrue = true
+
+			end
+
+		end
+
+			checkValid = false
 
 	elsif answer == "N"
 
-		puts ""
+			puts ""
 
-		puts "Closing ..."
+			puts "Closing ..."
 
-		puts ""
+			puts ""
 
-		checkValid = false
+			checkValid = false
 	else 
 
-		puts "That is not a valid answer."
+			puts "That is not a valid answer."
 
 	end
+
+checkValid = true
+	
 end
 
 
